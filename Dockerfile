@@ -11,6 +11,7 @@ RUN apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 0xD744D55EACDA69FF 
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y apache2 dumb-init fusiondirectory fusiondirectory-plugin-mail fusiondirectory-plugin-ssh fusiondirectory-smarty3-acl-render php-mdb2 php-mbstring php-fpm php
 
 ADD /apache/fusiondirectory.conf /etc/apache2/sites-available; \
+	/apache/ports.conf /etc/apache2/ports.conf; \
 	/fd/fusiondirectory.conf /etc/fusiondirectory/fusiondirectory.conf; \
 	/fd/class_groupManagement.inc /usr/share/fusiondirectory/plugins/admin/groups/class_groupManagement.inc; \
 	/ldap/ldap.conf /etc/ldap/ldap.conf
