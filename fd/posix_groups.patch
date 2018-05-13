@@ -9,8 +9,8 @@ Subject: [PATCH] set posixGroup on group of groups
 
 diff --git a/mixedgroups/admin/ogroups/mixedgroups/class_mixedGroup.inc b/mixedgroups/admin/ogroups/mixedgroups/class_mixedGroup.inc
 index 45e4d012f8..75d0f80739 100644
---- a/mixedgroups/admin/ogroups/mixedgroups/class_mixedGroup.inc
-+++ b/mixedgroups/admin/ogroups/mixedgroups/class_mixedGroup.inc
+--- a/plugins/admin/ogroups/mixedgroups/class_mixedGroup.inc
++++ b/plugins/admin/ogroups/mixedgroups/class_mixedGroup.inc
 @@ -29,7 +29,7 @@ class mixedGroup extends simplePlugin
        'plShortName'   => _('Posix group'),
        'plDescription' => _('Posix group settings'),

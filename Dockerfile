@@ -1,7 +1,7 @@
 FROM debian:testing
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update; \
-		apt-get install -y gnupg2;
+		apt-get install -y gnupg2 patch;
 
 RUN apt-key adv --keyserver hkp://pgp.surfnet.nl:80 --recv-keys 0xD744D55EACDA69FF && \
 		echo "deb http://repos.fusiondirectory.org/fusiondirectory-releases/fusiondirectory-1.2/debian-jessie jessie main" > /etc/apt/sources.list.d/fusiondirectory-jessie.list && \
@@ -16,7 +16,7 @@ ADD /ldap/ldap.conf /etc/ldap/ldap.conf
 ADD /start.sh /
 
 ADD /fd/*.patch /tmp/
-RUN cd /usr/share/fusiondirectory/plugins/; ls /tmp/*.patch | xargs -n1 patch -p1; rm -f /tmp/*.patch
+RUN cd /usr/share/fusiondirectory/; ls /tmp/*.patch | xargs -n1 patch -p1; rm -f /tmp/*.patch
 
 RUN a2ensite fusiondirectory.conf; \
 	a2dissite 000-default.conf
