@@ -13,6 +13,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y apache2 dumb-init fusiondi
 ADD /apache/fusiondirectory.conf /etc/apache2/sites-available
 ADD /apache/ports.conf /etc/apache2/ports.conf
 ADD /ldap/ldap.conf /etc/ldap/ldap.conf
+ADD /start.sh /
 
 ADD /fd/*.patch /tmp/
 RUN cd /usr/share/fusiondirectory/plugins/; ls /tmp/*.patch | xargs -n1 patch -p1; rm -f /tmp/*.patch
