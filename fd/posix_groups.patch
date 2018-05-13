@@ -1,0 +1,22 @@
+From e54c0bfdc76ffb8afdeb330964bb8085c1a78d13 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Markus=20H=C3=A4ll?= <soundgoof@gmail.com>
+Date: Mon, 7 May 2018 00:40:04 +0200
+Subject: [PATCH] set posixGroup on group of groups
+
+---
+ mixedgroups/admin/ogroups/mixedgroups/class_mixedGroup.inc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/mixedgroups/admin/ogroups/mixedgroups/class_mixedGroup.inc b/mixedgroups/admin/ogroups/mixedgroups/class_mixedGroup.inc
+index 45e4d012f8..75d0f80739 100644
+--- a/mixedgroups/admin/ogroups/mixedgroups/class_mixedGroup.inc
++++ b/mixedgroups/admin/ogroups/mixedgroups/class_mixedGroup.inc
+@@ -29,7 +29,7 @@ class mixedGroup extends simplePlugin
+       'plShortName'   => _('Posix group'),
+       'plDescription' => _('Posix group settings'),
+       'plSelfModify'  => FALSE,
+-      'plObjectType'  => array('ogroup-user'),
++      'plObjectType'  => array('ogroup-user','ogroup-ogroup'),
+       'plPriority'    => 1,
+ 
+       //~ 'plForeignKeys'  => array(

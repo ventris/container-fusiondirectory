@@ -1,0 +1,24 @@
+From 754871d5b0edb9ce0d427d1897083bea6a8ef63a Mon Sep 17 00:00:00 2001
+From: Côme Chilliet <come@opensides.be>
+Date: Tue, 11 Jul 2017 09:13:51 +0200
+Subject: [PATCH] Fixes #5657 Show filter for groups of groups in groups management
+
+---
+ plugins/admin/groups/class_groupManagement.inc | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/plugins/admin/groups/class_groupManagement.inc b/plugins/admin/groups/class_groupManagement.inc
+index ba15890..26d57bc 100644
+--- a/plugins/admin/groups/class_groupManagement.inc
++++ b/plugins/admin/groups/class_groupManagement.inc
+@@ -318,6 +318,7 @@ class groupManagement extends simpleManagement
+       array('id'  => 'USER',        'label'  => _('Show user groups')),
+       array('id'  => 'ROLE',        'label'  => _('Show organizational roles')),
+       array('id'  => 'APPLICATION', 'label'  => _('Show application groups')),
++      array('id'  => 'GROUP',       'label'  => _('Show groups of groups')),
+       array('id'  => 'UNKNOWN',     'label'  => _('Show unidentified groups')),
+     );
+     if (class_available('posixGroup')) {
+--
+libgit2 0.26.0
+
