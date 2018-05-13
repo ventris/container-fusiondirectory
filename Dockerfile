@@ -8,7 +8,11 @@ RUN apt-key adv --keyserver hkp://pgp.surfnet.nl:80 --recv-keys 0xD744D55EACDA69
 		echo "deb http://repos.fusiondirectory.org/fusiondirectory-extra/debian-jessie jessie main" >> /etc/apt/sources.list.d/fusiondirectory-jessie.list && \
 		apt-get update
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y apache2 dumb-init fusiondirectory fusiondirectory-plugin-mail fusiondirectory-plugin-ssh fusiondirectory-smarty3-acl-render php-mdb2 php-mbstring php-fpm php
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y apache2 dumb-init \
+		fusiondirectory fusiondirectory-plugin-mail fusiondirectory-plugin-mixedgroups \
+		fusiondirectory-plugin-ssh fusiondirectory-plugin-personal \
+		fusiondirectory-plugin-posix fusiondirectory-smarty3-acl-render \
+		php-mdb2 php-mbstring php-fpm php
 
 ADD /apache/fusiondirectory.conf /etc/apache2/sites-available
 ADD /apache/ports.conf /etc/apache2/ports.conf
