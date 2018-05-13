@@ -1,0 +1,25 @@
+From 4d342ee7af4c65b298d0ef5d2c2969432842d6b4 Mon Sep 17 00:00:00 2001
+From: Sebastian Svensson <ss@tinbox.nu>
+Date: Mon, 14 May 2018 00:02:58 +0200
+Subject: [PATCH] removes empty memberUid in case of nested groups.
+
+Background to this patch in https://github.com/fusiondirectory/fusiondirectory-plugins/pull/14
+---
+ mixedgroups/admin/ogroups/mixedgroups/class_mixedGroup.inc | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/mixedgroups/admin/ogroups/mixedgroups/class_mixedGroup.inc b/mixedgroups/admin/ogroups/mixedgroups/class_mixedGroup.inc
+index 45e4d012f8..c1155966ac 100644
+--- a/plugins/admin/ogroups/mixedgroups/class_mixedGroup.inc
++++ b/plugins/admin/ogroups/mixedgroups/class_mixedGroup.inc
+@@ -146,7 +146,9 @@ class mixedGroup extends simplePlugin
+     foreach ($members as $dn) {
+       $ldap->cat($dn, array('uid'));
+       $attrs = $ldap->fetch();
+-      $memberUid[] = $attrs['uid'][0];
++      if (isset($attrs['uid'][0])) {
++        $memberUid[] = $attrs['uid'][0];
++      }
+     }
+     $this->memberUid = $memberUid;
+ 
