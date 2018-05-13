@@ -12,7 +12,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y apache2 dumb-init fusiondi
 
 ADD /apache/fusiondirectory.conf /etc/apache2/sites-available
 ADD /apache/ports.conf /etc/apache2/ports.conf
-ADD /fd/fusiondirectory.conf /etc/fusiondirectory/fusiondirectory.conf
 ADD /fd/class_groupManagement.inc /usr/share/fusiondirectory/plugins/admin/groups/class_groupManagement.inc
 ADD /ldap/ldap.conf /etc/ldap/ldap.conf
 
@@ -29,4 +28,4 @@ ENTRYPOINT ["/usr/bin/dumb-init", "--"]
 
 EXPOSE 8000
 
-CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
+CMD ["/start.sh"]
