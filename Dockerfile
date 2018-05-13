@@ -3,7 +3,7 @@ FROM debian:testing
 RUN DEBIAN_FRONTEND=noninteractive apt-get update; \
 		apt-get install -y gnupg2;
 
-RUN apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 0xD744D55EACDA69FF && \
+RUN apt-key adv --keyserver hkp://pgp.surfnet.nl:80 --recv-keys 0xD744D55EACDA69FF && \
 		echo "deb http://repos.fusiondirectory.org/fusiondirectory-releases/fusiondirectory-1.2/debian-jessie jessie main" > /etc/apt/sources.list.d/fusiondirectory-jessie.list && \
 		echo "deb http://repos.fusiondirectory.org/fusiondirectory-extra/debian-jessie jessie main" >> /etc/apt/sources.list.d/fusiondirectory-jessie.list && \
 		apt-get update
