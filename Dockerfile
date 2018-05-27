@@ -12,7 +12,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y apache2 dumb-init \
 		fusiondirectory fusiondirectory-plugin-mail fusiondirectory-plugin-mixedgroups \
 		fusiondirectory-plugin-ssh fusiondirectory-plugin-personal \
 		fusiondirectory-plugin-posix fusiondirectory-smarty3-acl-render \
-		php-mdb2 php-mbstring php-fpm php
+		fusiondirectory-plugin-webservice php-mdb2 php-mbstring php-fpm php
 
 ADD /apache/fusiondirectory.conf /etc/apache2/sites-available
 ADD /apache/ports.conf /etc/apache2/ports.conf
