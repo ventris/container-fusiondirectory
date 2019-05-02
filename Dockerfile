@@ -1,7 +1,7 @@
 FROM debian:testing
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update; \
-		apt-get install -y gnupg2 patch;
+		apt-get install -y gnupg2 patch ca-certificates;
 
 RUN apt-key adv --keyserver hkp://pgp.surfnet.nl:80 --recv-keys 0xD744D55EACDA69FF && \
 		echo "deb http://repos.fusiondirectory.org/fusiondirectory-releases/fusiondirectory-1.2/debian-jessie jessie main" > /etc/apt/sources.list.d/fusiondirectory-jessie.list && \
