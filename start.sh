@@ -29,6 +29,4 @@ cat << _EOF_ > /etc/fusiondirectory/fusiondirectory.conf
 </conf>
 _EOF_
 
-exec fusiondirectory-setup --check-config
-
 exec /usr/sbin/apache2 -D FOREGROUND
