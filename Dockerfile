@@ -21,8 +21,6 @@ ADD /apache/ports.conf /etc/apache2/ports.conf
 ADD /ldap/ldap.conf /etc/ldap/ldap.conf
 ADD /start.sh /
 
-ADD /fd/*.patch /tmp/
-RUN ls /tmp/*.patch | xargs -n1 patch -p1 -d /usr/share/fusiondirectory/ -i; rm -f /tmp/*.patch
 
 RUN a2ensite fusiondirectory.conf; \
 	a2dissite 000-default.conf
