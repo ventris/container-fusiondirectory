@@ -11,7 +11,7 @@ RUN gpg --keyserver keys.gnupg.net --recv-key 0xD744D55EACDA69FF && \
                 apt-get update
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y apache2 dumb-init \
-		fusiondirectory fusiondirectory-plugin-mail \
+		fusiondirectory fusiondirectory-plugin-mail fusiondirectory-plugin-mixedgroups \
 		fusiondirectory-plugin-ssh fusiondirectory-plugin-personal \
 		fusiondirectory-plugin-posix fusiondirectory-smarty3-acl-render \
 		fusiondirectory-plugin-webservice php-mdb2 php-mbstring php-fpm php libapache2-mod-php
