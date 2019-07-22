@@ -20,6 +20,7 @@ cat << _EOF_ > /etc/fusiondirectory/fusiondirectory.conf
 
     <!-- Location definition -->
     <location name="ldap"
+        ldapTLS="TRUE"
     >
         <referral URI="${FD_ADMIN_URI}" base="${FD_BASE}"
                         adminDn="${FD_ADMIN_DN}"
